@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'ListView',
       home: AAA(),
     );
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
 }
 
 class AAA extends StatelessWidget {
-  const AAA({Key? key}) : super(key: key);
+  AAA({Key? key}) : super(key: key);
+  ScrollController _scrollController = ScrollController();
   final double _infinity = double.infinity;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,43 @@ class AAA extends StatelessWidget {
         backgroundColor: Colors.black,
         centerTitle: true,
       ),
-      backgroundColor: Colors.brown[200],
+      backgroundColor: Colors.greenAccent[400],
+      body: ListView(
+        controller: _scrollController,
+        children: <Widget>[
+          Container(
+            width: 1000,
+            height: 1800,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.purpleAccent, width: 2),
+            ),
+            // width: double.infinity,
+            // height: double.infinity,
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.amber, width: 2),
+                  ),
+                  child: Text('data'),
+                ),
+                Text('data'),
+                Text('data'),
+                Text('data'),
+                Text('data'),
+                // Row(
+                //   children: [
+                //     Container(width: 50, height: 50, color: Colors.teal),
+                //   ],
+                // )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
