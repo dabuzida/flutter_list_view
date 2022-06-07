@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -110,7 +108,6 @@ class BBB extends StatefulWidget {
 
 class _BBBState extends State<BBB> {
   final ScrollController _scrollController = ScrollController();
-  double _stackHeight = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -125,56 +122,58 @@ class _BBBState extends State<BBB> {
               child: Column(
                 children: <Widget>[
                   Text('알츠윈 관리자 사용 순서', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500)),
-                  SizedBox(height: 100),
-                  Container(
-                    width: double.infinity,
-                    height: 2000,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.purple, width: 5),
-                    ),
-                    child: Stack(
-                      // clipBehavior: Clip.none,
-                      children: <Widget>[
-                        Positioned(
-                          // top: 0,
-                          // bottom: 0,
-                          child: Container(
-                            // height: 2000,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.blue, width: 5),
-                            ),
-                            // width: 100,
-                            // height: 100,
-                            child: Column(
-                              children: [
-                                Image.asset('bird.jpg'),
-                                Image.asset('dev01.jpg'),
-                                Image.asset('dev02.jpg'),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 400,
-                          // bottom: 0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.yellow, width: 5),
-                            ),
-                            // width: 100,
-                            // height: 100,
-                            child: Column(
-                              children: [
-                                Image.asset('dev03.jpg'),
-                                Image.asset('dev04.jpg'),
-                                Image.asset('dev05.jpg'),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  Container(width: 300, height: 300, color: Colors.amber),
+                  Container(width: 300, height: 300, color: Colors.blue),
+                  Container(width: 300, height: 300, color: Colors.purple),
+                  // Container(
+                  //   width: double.infinity,
+                  //   height: 2000,
+                  //   decoration: BoxDecoration(
+                  //     border: Border.all(color: Colors.purple, width: 5),
+                  //   ),
+                  //   child: Stack(
+                  //     // clipBehavior: Clip.none,
+                  //     children: <Widget>[
+                  //       Positioned(
+                  //         // top: 0,
+                  //         // bottom: 0,
+                  //         child: Container(
+                  //           // height: 2000,
+                  //           decoration: BoxDecoration(
+                  //             border: Border.all(color: Colors.blue, width: 5),
+                  //           ),
+                  //           // width: 100,
+                  //           // height: 100,
+                  //           child: Column(
+                  //             children: [
+                  //               Image.asset('bird.jpg'),
+                  //               Image.asset('dev01.jpg'),
+                  //               Image.asset('dev02.jpg'),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       Positioned(
+                  //         top: 400,
+                  //         // bottom: 0,
+                  //         child: Container(
+                  //           decoration: BoxDecoration(
+                  //             border: Border.all(color: Colors.yellow, width: 5),
+                  //           ),
+                  //           // width: 100,
+                  //           // height: 100,
+                  //           child: Column(
+                  //             children: [
+                  //               Image.asset('dev03.jpg'),
+                  //               Image.asset('dev04.jpg'),
+                  //               Image.asset('dev05.jpg'),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
