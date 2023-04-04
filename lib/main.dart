@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_list_view/my_list_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +16,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('ListView'),
           elevation: 0,
-          foregroundColor: Colors.cyanAccent,
-          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.teal,
           centerTitle: true,
         ),
-        body: const BBB(),
+        // body: const BBB(),
+        body: const MyListView(),
         // body: const AAA(),
       ),
     );
@@ -108,24 +110,40 @@ class _BBBState extends State<BBB> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      controller: _scrollController,
-      padding: EdgeInsets.symmetric(horizontal: 300),
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(border: Border.all(color: Colors.red)),
-          height: 800,
-          child: Column(
-            children: [
-              Container(width: 300, height: 300, color: Colors.amber),
-              Container(width: 300, height: 200, color: Colors.blue),
-              Container(width: 300, height: 200, color: Colors.purple),
-              Expanded(child: SizedBox()),
-              Text('sss'),
-            ],
+    return Container(
+      decoration: BoxDecoration(border: Border.all(color: Colors.purple)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Container(
+            width: 800,
+            height: 800,
+            color: Colors.teal[100],
+            child: ListView(
+              controller: _scrollController,
+              padding: const EdgeInsets.only(right: 50),
+              children: <Widget>[
+                Container(width: 300, height: 300, color: Colors.amber),
+                Container(width: 300, height: 200, color: Colors.blue),
+                Container(width: 300, height: 500, color: Colors.purple),
+              ],
+            ),
           ),
-        ),
-      ],
+          Container(
+            width: 500,
+            height: 200,
+            color: Colors.deepPurpleAccent,
+            child: TextButton(
+              onPressed: () {
+                setState(() {});
+              },
+              child: const Text(
+                'renew',
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
